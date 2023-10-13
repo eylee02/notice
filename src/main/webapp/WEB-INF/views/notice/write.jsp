@@ -18,10 +18,11 @@
   <div>
     <form method="post" action="${contextPath}/notice/add.do">
       <div>
+      <input type="hidden" id="notice_no" name="notice_no">
       <label for="gubun">구분</label>
       <select name="gubun">  
-        <option selected>1</option>
-        <option>2</option>
+        <option value="1"selected>일반</option>
+        <option value="2">긴급</option>
       </select>
       </div>
       <div>
@@ -34,7 +35,7 @@
       </div>
       <div>
         <button type="submit">작성완료</button>
-        <button type="button" onclick="location.href=${contextPath}/notice/list.do">목록</button>
+        <button type="button" onclick="location.href=${contextPath}/notice/list.jsp">목록</button>
       </div>
     </form>
   </div>

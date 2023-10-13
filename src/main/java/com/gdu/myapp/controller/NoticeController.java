@@ -54,7 +54,7 @@ public class NoticeController {
     return "redirect:/notice/detail.do?notice_no=" + noticeDto.getNotice_no();   
   }
   
-  public String delete(@RequestParam(value="notice_no", required=false, defaultValue="0") int notice_no, RedirectAttributes redirectAttributes) {
+  public String delete(@RequestParam(value="notice/delete.do", required=false, defaultValue="0") int notice_no, RedirectAttributes redirectAttributes) {
     int deleteResult = noticeService.deleteNotice(notice_no);
     redirectAttributes.addFlashAttribute("deleteResult", deleteResult);
     return "redirect:/notice/list.do";

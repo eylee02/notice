@@ -27,16 +27,22 @@
 	  
   }
   
+  function fnEditNotice(){
+	  #('#btn_edit').click(function(){
+		  location.href = "${contectPath}/notice/edit.do";
+	  })
+  }
+  
   
   function fnDeleteNotice(){
 	  $('#btn_delete').click(function(){
 		  if(confirm('공지사항을 삭제할까요?')){
-			  $('#frm_detail').attr('action', '${contextPath}/contact/delete.do');
+			  $('#frm_detail').attr('action', '${contextPath}/notice/delete.do');
 				 $('#frm_detail').submit();
 		  }
 	  })
 	  
-	function fnListContact(){
+	function fnListNotice(){
 		  $('#btn_list').click(function(){
 			  location.href = "${contextPath}/notice/list.do";
 		  })
@@ -52,9 +58,17 @@
 <body>
 
   <div>
-    <h1>공지사항</h1>
-    <form id="frm_detail" method="post" action="${contextPath}/notice/modify.do">
-    
+    <h1>${notice.notice_no}공지사항</h1>
+    <form id="frm_detail" method="post" action="${contextPath}/notice/edit.do">
+      <div>
+      구분 : ${notice.gubun}
+      </div>
+      <div>
+      제목 : ${notice.title}
+      </div>
+      <div>
+      ${notice.content}
+      </div>
     </form>
     
     <hr>
